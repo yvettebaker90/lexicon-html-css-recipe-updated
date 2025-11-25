@@ -1,0 +1,114 @@
+/*GLOBALA INSTÄLLNINGAR*/
+* {
+  box-sizing: border-box; 
+}
+/*Ska göra så att allting håller sig inom den givna bredden/höjden men det känns som att body är större än 1280 ändå?*/
+
+/*GRUNDLÄGGANDE STIL PÅ SIDAN*/
+html {
+  background: rgba(160, 0, 0, 0.3);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/*BODY (HUVUDLAYOUT)*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: 48px;
+}
+/*Flexbox för att centrera innehåll, centrerar vertikalt och horisontellt samt staplar elementen vertikalt*/
+
+/*STRUKTUR: HEADER + MAIN*/
+main, header {
+  max-width: 1280px; /* Begränsar sidans bredd*/
+}
+
+header {
+  width: 100%;
+  height: 500px;
+  overflow: hidden; /* döljer allt utanför headern */
+}
+
+#header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*Gör så bilden inte blir utdragen*/
+  object-position: 50% 50%; 
+}
+
+main {
+  padding: 24px;
+  background-color: white;
+}
+
+
+/*RUBRIKER*/
+h1 {
+  color: rgba(161, 0, 0, 1);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/*Första sektionen (introduktionstexten)*/
+#introduction {
+  background-color: rgba(235, 235, 235, 1);
+  padding: 16px;
+}
+
+/*LISTOR*/
+li {
+  padding-block: 5px; /*Skapar luft mellan listpunkterna*/
+}
+
+/*BILDER I RAD*/
+.picture-gallery {
+  display: flex; /*Lägger bilderna bredvid varandra*/
+  gap: 16px; /*Avstånd mellan bilderna*/
+}
+
+/*Varje kolumn tar upp halva bredden*/
+.column {
+  width: 100%;
+}
+
+ .column img {
+  width: 100%; /*Fyller hela kolumnens bredd*/
+  aspect-ratio: 1 / 1; /*Gör bilderna helt fyrkantiga*/
+  object-fit: cover; /*Beskär snyggt utan att förvränga*/
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+
+/*RESPONSIV DESIGN*/
+@media screen and (max-width: 600px) {
+* {
+  margin: 0;
+}
+
+header {
+    height: 250px;
+}
+
+.column {
+    width: 100%;
+}
+
+.picture-gallery {
+  display: flex;
+  flex-direction: column;
+}
+}
