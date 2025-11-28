@@ -95,10 +95,6 @@ figure {
 
 /*RESPONSIV DESIGN*/
 @media screen and (max-width: 600px) {
-* {
-  margin: 0;
-}
-
 header {
     height: 250px;
 }
@@ -112,3 +108,14 @@ header {
   flex-direction: column;
 }
 }
+
+/*
+
+tog bort 
+
+* {
+margin: 0;
+}
+
+för det gjorde att allt blev kompakt i mobilvy
+*/
