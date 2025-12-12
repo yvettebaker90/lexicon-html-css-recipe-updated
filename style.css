@@ -1,121 +1,241 @@
-/*GLOBALA INSTÄLLNINGAR*/
-* {
-  box-sizing: border-box; 
-}
-/*Ska göra så att allting håller sig inom den givna bredden/höjden men det känns som att body är större än 1280 ändå?*/
+/* ROOT VARIABLES */
+:root {
+  --color-bg-page: hsla(0, 100%, 32%, 0.418);
+  --color-surface: #fff;
+  --color-text: #111;
+  --color-brand: hsl(0, 100%, 32%);
+  --color-grey: hsl(0, 0%, 92%);
+  --color-white: #fff;
 
-/*GRUNDLÄGGANDE STIL PÅ SIDAN*/
-html {
-  background: rgba(160, 0, 0, 0.3);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  --font-family-base: "Open Sans", system-ui, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-xl: 2rem;
+  --font-size-lg: 1.5rem;
+  --font-size-md: 1rem;
+
+  --font-weight-bold: 700;
+
+  --layout-width: 80rem;
+  --hero-height: 30rem;
+  --gallery-height: 22rem;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+
+  --btn-radius: 0.25rem;
+  --btn-padding-y: 0.75rem;
+  --btn-padding-x: 1rem;
+
+  --nav-gap: 3rem;
 }
 
-/*BODY (HUVUDLAYOUT)*/
+/* GLOBAL */
+
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 0;
-  margin-bottom: 48px;
-}
-/*Flexbox för att centrera innehåll, centrerar vertikalt och horisontellt samt staplar elementen vertikalt*/
-
-/*STRUKTUR: HEADER + MAIN*/
-main, header {
-  max-width: 1280px; /* Begränsar sidans bredd*/
-}
-
-header {
-  width: 100%;
-  height: 500px;
-  overflow: hidden; /* döljer allt utanför headern */
-}
-
-#header-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /*Gör så bilden inte blir utdragen*/
-  object-position: 50% 50%; 
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
+  margin: 0 auto;
+  max-width: var(--layout-width);
+  line-height: 1.6;
 }
 
 main {
-  padding: 24px;
-  background-color: white;
+  background-color: var(--color-white);
 }
 
-
-/*RUBRIKER*/
-h1 {
-  color: rgba(161, 0, 0, 1);
-  font-size: 28px;
-  font-weight: 700;
+/* SKIP TO MAIN */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: black;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 1000;
+  transition: top 0.2s ease;
 }
 
-h2 {
-  font-size: 24px;
-  font-weight: bold;
+.skip-link:focus {
+  top: 1rem;     /* visas när man tabbar */
 }
 
-/*Första sektionen (introduktionstexten)*/
-#introduction {
-  background-color: rgba(235, 235, 235, 1);
-  padding: 16px;
+/* NAVIGATION BAR */
+
+.navbar {
+  background-color: var(--color-surface);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
 }
 
-/*LISTOR*/
-li {
-  padding-block: 5px; /*Skapar luft mellan listpunkterna*/
+.navbar > a:first-child {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-brand);
 }
 
-/*BILDER I RAD*/
-.picture-gallery {
-  display: flex; /*Lägger bilderna bredvid varandra*/
-  gap: 16px; /*Avstånd mellan bilderna*/
-}
-
-/*Varje kolumn tar upp halva bredden*/
-.column {
-  width: 100%;
-}
-
- .column img {
-  width: 100%; /*Fyller hela kolumnens bredd*/
-  aspect-ratio: 1 / 1; /*Gör bilderna helt fyrkantiga*/
-  object-fit: cover; /*Beskär snyggt utan att förvränga*/
-}
-
-figure {
+.navbar ul {
+  display: flex;
+  gap: var(--nav-gap);
   margin: 0;
   padding: 0;
 }
 
-
-/*RESPONSIV DESIGN*/
-@media screen and (max-width: 600px) {
-header {
-    height: 250px;
+.navbar ul li {
+  list-style: none;
 }
 
-.column {
-    width: 100%;
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--color-text);
+  padding: var(--space-xs) var(--space-sm);
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
 }
+
+.navbar ul li a:hover {
+  color: var(--color-brand);
+  border-bottom-color: var(--color-brand);
+}
+
+.navbar button {
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-brand);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.recipe-hero-banner {
+  background-image: 
+     linear-gradient(to right, rgba(0,0,0,0.45), transparent),
+     url("/bilder/header.webp");
+  background-size: cover;
+  background-position: center;
+  height: var(--hero-height);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-lg);
+  color: var(--color-white);
+}
+
+/* TEXT + HEADINGS */
+
+h1 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  padding: var(--space-sm);
+  color: var(--color-brand);
+  margin: 0;
+}
+
+section h2 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-xs);
+  padding-left: var(--space-sm);
+}
+
+/* INTRODUCTION */
+
+.recipe-introduction p {
+  background-color: var(--color-grey);
+  padding: var(--space-sm);
+  margin: 0 var(--space-sm);
+}
+
+/* INGREDIENTS + HOW-TO LISTS */
+
+.recipe-ingrediens ul,
+.recipe-how-to ol {
+  padding-left: var(--space-lg);
+  line-height: 1.8;
+}
+
+.recipe-ingrediens p {
+  padding-left: var(--space-sm);
+}
+
+/* IMAGE GALLERY */
 
 .picture-gallery {
-  display: flex;
-  flex-direction: column;
-}
-}
-
-/*
-
-tog bort 
-
-* {
-margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem;
+  padding: var(--space-sm);
 }
 
-för det gjorde att allt blev kompakt i mobilvy
-*/
+.picture-gallery img {
+  width: 100%;
+  height: var(--gallery-height);
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  gap: 2rem;
+  aspect-ratio: 1 / 1;
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+/* UTILITIES */
+
+.u-bg-light {
+  background-color: var(--color-grey);
+}
+
+.u-p-md {
+  padding: var(--space-sm);
+}
+

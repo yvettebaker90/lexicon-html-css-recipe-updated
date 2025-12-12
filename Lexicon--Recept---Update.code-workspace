@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Lexicon---Recept"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Lexicon--Recept---Update"
+	}
+}
