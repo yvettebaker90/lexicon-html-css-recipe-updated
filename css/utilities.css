@@ -1,0 +1,17 @@
+.u-bg-light {
+  background-color: var(--color-grey);
+}
+
+.u-p-md {
+  padding: var(--space-sm);
+}
+
+.recipe-headline {
+  text-align: center;
+  margin-top: var(--space-lg);
+  color: var(--color-grey);
+
+  h2 {
+    font-size: 2rem;
+  }
+}

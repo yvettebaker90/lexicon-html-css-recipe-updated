@@ -1,0 +1,102 @@
+/* DESIGN TOKENS */
+
+:root {
+  --clr-brand-pink: #FF66C4;
+  --clr-bg-beige: #ECE9E1;
+
+  --color-bg-page: var(--clr-bg-beige);
+  --color-surface: #ffffff;
+  --color-text: #111;
+  --color-text-muted: #555;
+  --color-border: hsl(0, 0%, 85%);
+
+  --color-accent: var(--clr-brand-pink);
+  --color-accent-hover: rgba(255, 102, 196, 0.5);
+
+  --font-family-base: "Open Sans", system-ui, sans-serif;
+  --font-weight-bold: 700;
+
+  --font-size-base: 1rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem;
+
+  --layout-width: 75%;
+  --hero-height: 30rem;
+  --gallery-height: 22rem;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* GLOBAL */
+
+body {
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+}
+
+main {
+  background-color: white;
+  width: var(--layout-width);
+  margin: auto;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: var(--color-accent);
+  text-align: center;
+  padding: var(--space-md);
+  width: 75%;
+  margin: auto;
+
+  p {
+    margin: 0;
+    color: black;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    a {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+/* SKIP LINK */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: black;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 1000;
+  transition: top 0.2s ease;
+
+  &:focus {
+    top: 1rem;
+  }
+}
+

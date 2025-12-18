@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Enkelt recept på tunna pannkakor - ingredienser, steg för steg och inspiration.">
     <title>Recept: Enkla pannkakor</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Bebas+Neue&family=Bungee&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Staatliches&display=swap" rel="stylesheet">
 </head>
 <body>  
     <!--Skip to main-->
@@ -14,76 +17,248 @@
 
     <!--Header-->
     <header class="navbar">
-        <a href="index.html">PancakeFactory</a>
+        <a href="/index.html"><img src="bilder/logotype.png" alt=""/> </a>
+
+        <div class="nav-right">
         <ul role="list">
-            <li><a href="index.html">Alla Recept</a></li>
+            <li><a href="/index.html">Alla Recept</a></li>
             <li><a href="http://">Om Oss</a></li>
             <li><a href="http://">Kontakt</a></li>
         </ul>
         <button>Logga in</button>
+    </div>
     </header>
 
     <!--Main-->
-    <main id="#main-content">
-    <section class="recipe-hero-banner">
-        <p>Pannkakor
-        Pannkakor
-        Pannkakor</p>
+    <main id="main-content">
+    <section class="recipe-hero-banner" aria-label="Hero banner med pannkaksbild och text">
+        <h1>Pannkakor</h1>
         <p> - I alla dess former och variationer</p>
     </section>
 
-    <h1>Hitta ditt nya favoritrecept</h1>
+    <section class="recipe-headline"><h2>Hitta ditt nya favoritrecept</h2></section>
+
 <div class="cards">
-    <article class="card">
-        <img src="bilder/header.webp" alt="">
-        <div class="card-content">
-            <a href="/easyreciept.html">
-            <h2>Enkel Pannkaksrecept</h2>
-        </a>
-        <p>Fluffiga pannkakor gjorda på bara några minuter.</p>
-        </div>
-    </article>
-    <article class="card">
-        <img src="https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg" alt="">
-        <div class="card-content">
-            <a href="/easyreciept.html">
-        <h2>Bananpannkakor</h2></a>
-        <p>Goda, söta och perfekta till frukost.</p>
-        </div>
-    </article>
+
+    <a href="/html/easyreciept.html" class="card-link">
         <article class="card">
-        <img src="https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg" alt="">
-        <div class="card-content">
-            <a href="/easyreciept.html">
-        <h2>Proteinpannkakor</h2></a>
-        <p>Perfekt för träning och återhämtning.</p>
-        </div>
-    </article>
+            <img src="bilder/easyrecipeheader.webp" alt="">
+            <div class="card-content">
+                <h2>Enkel pannkaksrecept</h2>
+                <p>Fluffiga pannkakor gjorda på bara några minuter.</p>
+            </div>
+        </article>
+    </a>
+
+    <a href="#" class="card-link">
         <article class="card">
-        <img src="https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg" alt="">
-        <div class="card-content">
-            <a href="/easyreciept.html">
-        <h2>Amerikanska pannkakor</h2></a>
-        <p>Tjocka och fluffiga - barnens favorit!</p>
-        </div>
-    </article>
+            <img src="/bilder/pancake-7811889_1280.jpg" alt="">
+            <div class="card-content">
+                <h2>Bananpannkakor</h2>
+                <p>Goda, söta och perfekta till frukost.</p>
+            </div>
+        </article>
+    </a>
+
+    <a href="#" class="card-link">
         <article class="card">
-        <img src="https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg" alt="">
-        <div class="card-content">
-            <a href="/easyreciept.html">
-        <h2>Glutenfria Pannkakor</h2></a>
-        <p>Lätta, tunna och perfekt för dig som vill undvika gluten</p>
-        </div>
-    </article>
+            <img src="https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg" alt="">
+            <div class="card-content">
+                <h2>Proteinpannkakor</h2>
+                <p>Perfekt för träning och återhämtning.</p>
+            </div>
+        </article>
+    </a>
+
+    <a href="#" class="card-link">
         <article class="card">
-        <img src="https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg" alt="">
-        <div class="card-content">
-            <a href="/easyreciept.html">
-        <h2>Chokladpannkakor</h2></a>
-        <p>Härliga, chokladiga pannkakor som passar både till dessert och brunchen.</p>
-        </div>
-    </article>
+            <img src="https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg" alt="">
+            <div class="card-content">
+                <h2>Amerikanska pannkakor</h2>
+                <p>Tjocka och fluffiga – barnens favorit!</p>
+            </div>
+        </article>
+    </a>
+
+    <a href="#" class="card-link">
+        <article class="card">
+            <img src="https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg" alt="">
+            <div class="card-content">
+                <h2>Glutenfria pannkakor</h2>
+                <p>Lätta, tunna och perfekta för dig som vill undvika gluten.</p>
+            </div>
+        </article>
+    </a>
+
+    <a href="#" class="card-link">
+        <article class="card">
+            <img src="https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg" alt="">
+            <div class="card-content">
+                <h2>Chokladpannkakor</h2>
+                <p>Chokladiga pannkakor som passar både dessert och brunch.</p>
+            </div>
+        </article>
+    </a>
+
 </div>
+
+ 
     </main>
+    <footer>
+    <p>&copy; 2025 pannkaka.se.</p>
+    <ul>
+        <li><a href="/index.html">Alla Recept</a></li>
+        <li><a href="http://">Om Oss</a></li>
+        <li><a href="http://">Kontakt</a></li>
+    </ul>
+    
+    <!--FORMULÄR-->
+    <section aria-labelledby="feedback-heading">
+    <!-- Trigger-knapp (ligger kvar nere till höger) -->
+    <button
+    class="feedback-trigger"
+    onclick="document.getElementById('feedbackModal').showModal()"
+    >
+        Feedback
+    </button>
+
+<!-- Modal -->
+<dialog id="feedbackModal" aria-labelledby="feedback-title">
+  <div class="modal-header">
+    <h3 id="feedback-title">Hjälp oss bli bättre på pannkakor</h3>
+    <button
+      type="button"
+      aria-label="Stäng formulär"
+      onclick="document.getElementById('feedbackModal').close()"
+    >
+      ×
+    </button>
+  </div>
+
+  <form method="POST">
+
+    <!-- E-post -->
+    <label for="email">E-post (valfritt)</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      autocomplete="email"
+      placeholder="epost@exempel.se"
+    />
+
+    <!-- Recept -->
+    <label for="recipe">Vilket pannkaksrecept testade du?</label>
+    <select id="recipe" name="recipe">
+      <option value="">Välj recept</option>
+      <option value="classic">Klassiska pannkakor</option>
+      <option value="banana">Bananpannkakor</option>
+      <option value="protein">Proteinpannkakor</option>
+      <option value="american">Amerikanska pannkakor</option>
+      <option value="glutenfree">Glutenfria pannkakor</option>
+    </select>
+
+    <!-- Datum -->
+    <label for="cook-date">När lagade du receptet?</label>
+    <input
+      type="date"
+      id="cook-date"
+      name="cook_date"
+    />
+
+    <!-- Range -->
+    <label for="difficulty">
+      Hur lätt var receptet att följa? (0 = svårt, 10 = superenkelt)
+    </label>
+    <input
+      type="range"
+      id="difficulty"
+      name="difficulty"
+      min="0"
+      max="10"
+      step="1"
+      list="difficulty-markers"
+    />
+
+    <datalist id="difficulty-markers">
+      <option value="0"></option>
+      <option value="5"></option>
+      <option value="10"></option>
+    </datalist>
+
+    <!-- Radio -->
+    <fieldset>
+      <legend>Hur blev pannkakorna?</legend>
+
+      <input
+        type="radio"
+        id="result-great"
+        name="result"
+        value="great"
+      />
+      <label for="result-great">Jättegoda</label>
+
+      <input
+        type="radio"
+        id="result-ok"
+        name="result"
+        value="ok"
+      />
+      <label for="result-ok">Helt okej</label>
+
+      <input
+        type="radio"
+        id="result-bad"
+        name="result"
+        value="bad"
+      />
+      <label for="result-bad">Inte som jag tänkt</label>
+    </fieldset>
+
+    <!-- Checkbox -->
+    <fieldset>
+      <legend>Vad kan vi förbättra?</legend>
+
+      <label>
+        <input type="checkbox" name="improve" value="instructions" />
+        Tydligare instruktioner
+      </label>
+
+      <label>
+        <input type="checkbox" name="improve" value="ingredients" />
+        Ingredienslistan
+      </label>
+
+      <label>
+        <input type="checkbox" name="improve" value="tips" />
+        Fler tips och variationer
+      </label>
+
+      <label>
+        <input type="checkbox" name="improve" value="nothing" />
+        Inget – receptet var toppen!
+      </label>
+    </fieldset>
+
+    <!-- Textarea -->
+    <label for="comments">
+      Har du ett eget pannkakstips eller en variation?
+    </label>
+    <textarea
+      id="comments"
+      name="comments"
+      rows="4"
+      placeholder="T.ex. bytte mjöl, lade till kardemumma…"
+    ></textarea>
+
+    <!-- Submit -->
+    <button type="submit">
+      Skicka pannkaksfeedback
+    </button>
+
+  </form>
+</dialog>
+
+</footer>
 </body>
 </html>

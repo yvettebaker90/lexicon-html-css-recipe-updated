@@ -1,0 +1,384 @@
+/* NAVBAR */
+
+.navbar {
+  background-color: var(--color-bg-page);
+  display: flex;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  width: 75%;
+  margin: auto;
+
+  > a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-brand);
+  }
+
+  img {
+    width: 16rem;
+    height: auto;
+  }
+
+  .nav-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  ul {
+    display: flex;
+    gap: var(--nav-gap);
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+
+      a {
+        display: block;
+        padding: 1rem 1.25rem;
+        font-size: 1.2rem;
+        text-decoration: none;
+        position: relative;
+        color: black;
+        transition: all 0.3s cubic-bezier(.2, 0, 0, 1);
+        z-index: 1;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 1.25rem;
+          right: 1.25rem;
+          height: 2px;
+          background-color: var(--color-accent);
+          transition: all 0.3s cubic-bezier(.2, 0, 0, 1);
+          z-index: -1;
+        }
+
+        &:hover {
+          color: white;
+
+          &::after {
+            left: 0;
+            right: 0;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    background: var(--color-accent);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-family: 'lato', sans-serif;
+
+    &:hover {
+      background: var(--color-accent-hover);
+    }
+  }
+}
+
+/* HERO */
+
+.recipe-hero-banner {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("/bilder/herobanner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: var(--hero-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: var(--space-lg);
+  color: var(--color-white);
+  width: 100%;
+
+  h1 {
+    font-family: "Pacifico", cursive;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    letter-spacing: 0.5rem;
+    margin: 0;
+    color: white;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: white;
+    margin-left: 0;
+  }
+}
+
+#easyreciept-hero-banner {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("/bilder/easyrecipeheader.webp");
+}
+
+/* TEXT / INTRO (RECEPTSIDORNA) */
+
+section {
+  h2 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-xs);
+    padding-left: var(--space-sm);
+  }
+}
+
+.recipe-introduction {
+  p {
+    background-color: var(--color-accent);
+    padding: var(--space-sm);
+    margin: 0 var(--space-sm);
+    border-radius: 10px;
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+article {
+
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+
+article section {
+  margin-bottom: var(--space-lg);
+}
+
+
+/* INGREDIENTS / HOW-TO */
+
+.recipe-ingrediens ul,
+.recipe-how-to ol {
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+}
+
+.recipe-how-to ol {
+  counter-reset: step;
+}
+
+.recipe-how-to li {
+  margin-bottom: 0.75rem;
+}
+
+
+/* GALLERY */
+
+.picture-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: var(--space-sm);
+
+  img {
+    width: 100%;
+    height: var(--gallery-height);
+    object-fit: cover;
+    border-radius: 6px;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* CARDS */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+  padding: clamp(1rem, 4vw, 2.5rem);
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px var(--color-accent-hover);
+  }
+
+  img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+
+  .card-content {
+    padding: 1rem;
+
+    h2 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--color-text);
+    }
+  }
+}
+
+/* FEEDBACK FAB (Floating Action Button)
+   En fast placerad knapp nere till höger som öppnar formuläret */
+
+.feedback-trigger {
+  /* Fixerar knappen i viewporten */
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+
+  /* Gör knappen rund och centrerar texten */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+
+  /* Visuell styling enligt sidans färgschema */
+  background: var(--color-accent);
+  color: var(--color-text);
+  font-size: 1rem;
+  text-transform: uppercase;
+
+  /* Tar bort standard-knappstil */
+  border: none;
+  cursor: pointer;
+
+  /* skuggning under knappen */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+  /* Säkerställer att knappen alltid ligger över innehållet */
+  z-index: 1000;
+
+  /* Subtil rörelse vid hover för visuell feedback */
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Tydlig fokusmarkering för tangentbordsanvändare (WCAG) */
+  &:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+}
+
+/* MODAL (dialog-element)
+   Används för feedback-formuläret */
+
+dialog {
+  /* Tar bort browserns default-styling */
+  border: none;
+
+  /* Rundade hörn och centrerad modal */
+  border-radius: var(--radius-md);
+  max-width: 500px;
+  margin: auto;
+
+  /* Yta och skugga för tydlig modal-känsla */
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+
+  /* Mörklägger bakgrunden när modalen är öppen */
+  &::backdrop {
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  /* MODAL HEADER */
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: var(--space-sm);
+    border-bottom: 1px solid var(--color-border);
+
+    /* Rubrik i modalen */
+    h3 {
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-bold);
+    }
+
+    /* Stäng-knapp (X) */
+    button {
+      background: rgb(226, 225, 225);
+      border: none;
+      border-radius: 25%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--color-text-muted);
+
+      &:hover {
+        color: var(--color-text);
+      }
+    }
+  }
+
+  /* FORMULÄR */
+
+  form {
+    /* Grid ger tydlig vertikal struktur */
+    display: grid;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+
+    /* Label är tydliga och lättlästa */
+    label {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* Gemensam styling för alla formulärfält */
+    input,
+    textarea,
+    select {
+      padding: 0.6rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      background-color: var(--color-surface);
+
+      /* Fokusmarkering för tillgänglighet */
+      &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+      }
+    }
+
+    /* Skicka-knapp */
+    button[type="submit"] {
+      margin-top: var(--space-xs);
+      align-self: flex-start;
+
+      background-color: var(--clr-brand-pink);
+      border-radius: 10px;
+      padding: 10px;
+      border: none;
+
+      font-family: var(--font-family-base);
+      font-size: 16px;
+    }
+  }
+}
